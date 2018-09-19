@@ -31,6 +31,8 @@ ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split()
 # Application definition
 
 INSTALLED_APPS = [
+    'django_lender',
+    'lender_books',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -76,13 +78,13 @@ WSGI_APPLICATION = 'django_lender.wsgi.application'
 DATABASES = {
       'default': {
           'ENGINE': 'django.db.backends.postgresql',
-          'NAME': os.environ.get('DB_NAME'),
-          'USER': os.environ.get('DB_USER'),
-          'PASSWORD': os.environ.get('DB_PASSWORD'),
-          'HOST': os.environ.get('DB_HOST'),
-          'PORT': 5432,
+          'NAME': os.environ.get('DB_NAME', ''),
+          'USER': os.environ.get('DB_USER', ''),
+          'PASSWORD': os.environ.get('DB_PASS', ''),
+          'HOST': os.environ.get('DB_HOST', ''),
+          'PORT': os.environ.get('DB_PORT', 5432),
           'TEST': {
-              'NAME': 'lender_test'
+              'NAME': 'test_db'
           }
       }
   }

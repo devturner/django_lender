@@ -1,0 +1,12 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+
+<div class="book_list">
+	{% for book in books %}
+    <h3><a href="{% url "book_detail" pk=book.id %}">{{book.title}}({{book.status}})</a></h3>
+	{% endfor %}
+</div>
+
+{% endblock %}
+
