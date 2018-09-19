@@ -2,7 +2,6 @@ from django.shortcuts import render, get_object_or_404
 from .models import Book
 
 
-
 def book_list_view(request):
     books = Book.objects.all()
 
