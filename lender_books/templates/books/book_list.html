@@ -3,9 +3,11 @@
 {% block content %}
 
 <div class="book_list">
-	{% for book in books %}
-    <h3><a href="{% url "book_detail" pk=book.id %}">{{book.title}}({{book.status}})</a></h3>
-	{% endfor %}
+  <ul>
+    {% for book in books %}
+      <ui class="books"><h3><a href="{% url "book_detail" pk=book.id %}">{{book.title}}<br>({{book.status}})</a></h3></ui>
+    {% endfor %}
+  </ul>
 </div>
 
 {% endblock %}
