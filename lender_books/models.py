@@ -18,6 +18,8 @@ class Book(models.Model):
     status = models.CharField(choices=CHECKEDOUT, default='checked-out', max_length=48)
     date_added = models.DateTimeField(auto_now_add=True)
     last_borrowed = models.DateTimeField(auto_now=True)
+    # add a date returned?
+
 
     def __str__(self):
         return f'Book: {self.title} ({self.status})'
